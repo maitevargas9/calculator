@@ -68,11 +68,24 @@ export default function Calculator() {
       }
     } else if (value === "tan") {
       if (input) {
-        const radianValue = parseFloat(input) * (Math.PI / 180); // Umrechnung in Radiant
+        const radianValue = parseFloat(input) * (Math.PI / 180);
         const tanValue = Math.tan(radianValue);
         setLastCalculation(`tan(${input}) = ${tanValue}`);
         setInput(tanValue.toString());
       }
+    } else if (value === "%") {
+      if (input) {
+        const percentValue = parseFloat(input) / 100;
+        setLastCalculation(`${input}% = ${percentValue}`);
+        setInput(percentValue.toString());
+      }
+    } else if (value === "±") {
+      if (input) {
+        const signToggled = (parseFloat(input) * -1).toString();
+        setInput(signToggled);
+      }
+    } else if (value === "←") {
+      setInput(input.slice(0, -1));
     } else {
       setInput(input + value);
     }

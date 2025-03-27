@@ -2,7 +2,9 @@ import Button from "./Button";
 
 export default function Buttons({ onButtonClick }) {
   const buttonValues = [
-    ["C", "π", "x²", "x^x", "√x", "ⁿ√x", "sin", "cos", "tan"],
+    ["C", "π", "x²", "x^x"],
+    ["√x", "ⁿ√x", "sin", "cos"],
+    ["tan", "%", "±", "←"],
     ["7", "8", "9", "/"],
     ["4", "5", "6", "*"],
     ["1", "2", "3", "-"],
@@ -31,7 +33,10 @@ export default function Buttons({ onButtonClick }) {
                       "ⁿ√x",
                       "sin",
                       "cos",
-                      "tan"
+                      "tan",
+                      "%",
+                      "±",
+                      "←"
                     ].includes(btn)
                     ? "operator"
                     : ""
