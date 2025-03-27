@@ -1,14 +1,10 @@
-export default function Display({ input, lastExpression, lastCalculation }) {
+export default function Display({ input, lastCalculation }) {
   return (
     <div className="display">
-      <input type="text" value={input} disabled />
-      {input === "" &&
-        lastExpression &&
-        lastCalculation &&
+      <input type="text" value={input} readOnly />
+      {lastCalculation &&
         <div className="last-calculation">
-          <p>
-            {lastExpression} = {lastCalculation}
-          </p>
+          {lastCalculation}
         </div>}
     </div>
   );
