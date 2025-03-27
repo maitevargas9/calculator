@@ -1,12 +1,12 @@
-import CalculatorLogo from "./assets/calculator-logo.png";
+import { useState } from "react";
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {
   return (
-    <div id="header">
-      <img src={CalculatorLogo} alt="Calculator Logo" />
-      <h1>Calculator</h1>
-    </div>
+    <>
+      <Header></Header>
+    </>
   );
 }
 
