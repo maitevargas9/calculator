@@ -27,11 +27,30 @@ export default function Calculator() {
         setLastCalculation(`${input}² = ${squaredValue}`);
         setInput(squaredValue.toString());
       }
+    } else if (value === "x^x") {
+      if (input) {
+        const powerValue = Math.pow(parseFloat(input), parseFloat(input));
+        setLastCalculation(`${input}^${input} = ${powerValue}`);
+        setInput(powerValue.toString());
+      }
     } else if (value === "√x") {
       if (input) {
         const sqrtValue = Math.sqrt(parseFloat(input));
         setLastCalculation(`√${input} = ${sqrtValue}`);
         setInput(sqrtValue.toString());
+      }
+    } else if (value === "ⁿ√x") {
+      const values = input.split(",");
+      if (values.length === 2) {
+        const n = parseFloat(values[0]);
+        const x = parseFloat(values[1]);
+        if (n && x) {
+          const rootValue = Math.pow(x, 1 / n);
+          setLastCalculation(`${n}√${x} = ${rootValue}`);
+          setInput(rootValue.toString());
+        }
+      } else {
+        setInput("n,x");
       }
     } else {
       setInput(input + value);
