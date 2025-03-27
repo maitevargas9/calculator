@@ -21,6 +21,18 @@ export default function Calculator() {
       setInput("");
     } else if (value === "π") {
       setInput(input + "π");
+    } else if (value === "x²") {
+      if (input) {
+        const squaredValue = Math.pow(parseFloat(input), 2);
+        setLastCalculation(`${input}² = ${squaredValue}`);
+        setInput(squaredValue.toString());
+      }
+    } else if (value === "√x") {
+      if (input) {
+        const sqrtValue = Math.sqrt(parseFloat(input));
+        setLastCalculation(`√${input} = ${sqrtValue}`);
+        setInput(sqrtValue.toString());
+      }
     } else {
       setInput(input + value);
     }
