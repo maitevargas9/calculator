@@ -55,6 +55,13 @@ input {
   border-radius: 5px;
 }
 
+.last-calculation {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

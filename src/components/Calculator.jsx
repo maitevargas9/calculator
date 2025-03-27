@@ -4,6 +4,8 @@ import Button from "./Button";
 
 export default function Calculator() {
   const [input, setInput] = useState("");
+  const [lastExpression, setLastExpression] = useState("");
+  const [lastCalculation, setLastCalculation] = useState("");
 
   const handleClick = value => {
     setInput(input + value);
@@ -11,9 +13,14 @@ export default function Calculator() {
 
   const handleCalculate = () => {
     try {
-      setInput(eval(input).toString());
+      const result = eval(input).toString();
+      setLastExpression(input);
+      setInput(result);
+      setLastCalculation(result);
     } catch (error) {
-      setInput("Error");
+      setLastExpression("");
+      setInput("Fehler");
+      setLastCalculation("");
     }
   };
 
@@ -23,7 +30,11 @@ export default function Calculator() {
 
   return (
     <div className="calculator">
-      <Display input={input} />
+      <Display
+        input={input}
+        lastExpression={lastExpression}
+        lastCalculation={lastCalculation}
+      />
       <div className="buttons">
         <Button value="1" onClick={handleClick} />
         <Button value="2" onClick={handleClick} />
