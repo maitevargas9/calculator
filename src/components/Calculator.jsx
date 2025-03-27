@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Display from "./Display";
 
 export default function Calculator() {
   const [input, setInput] = useState("");
@@ -21,9 +22,7 @@ export default function Calculator() {
 
   return (
     <div className="calculator">
-      <div className="display">
-        <input type="text" value={input} disabled />
-      </div>
+      <Display input={input} />
       <div className="buttons">
         <button onClick={() => handleClick("1")}>1</button>
         <button onClick={() => handleClick("2")}>2</button>
