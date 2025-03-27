@@ -2,7 +2,7 @@ import Button from "./Button";
 
 export default function Buttons({ onButtonClick }) {
   const buttonValues = [
-    ["C", "π", "x²", "x^x", "√x", "ⁿ√x"],
+    ["C", "π", "x²", "x^x", "√x", "ⁿ√x", "sin", "cos", "tan"],
     ["7", "8", "9", "/"],
     ["4", "5", "6", "*"],
     ["1", "2", "3", "-"],
@@ -23,11 +23,18 @@ export default function Buttons({ onButtonClick }) {
                 ? "equal"
                 : btn === "C"
                   ? "clear"
-                  : btn === "π"
+                  : [
+                      "π",
+                      "x²",
+                      "x³",
+                      "x^x",
+                      "ⁿ√x",
+                      "sin",
+                      "cos",
+                      "tan"
+                    ].includes(btn)
                     ? "operator"
-                    : ["π", "x²", "x^x", "√x", "ⁿ√x"].includes(btn)
-                      ? "operator"
-                      : ""
+                    : ""
             }
           />
         )}

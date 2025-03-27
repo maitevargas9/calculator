@@ -52,6 +52,27 @@ export default function Calculator() {
       } else {
         setInput("n,x");
       }
+    } else if (value === "sin") {
+      if (input) {
+        const radianValue = parseFloat(input) * (Math.PI / 180);
+        const sinValue = Math.sin(radianValue);
+        setLastCalculation(`sin(${input}) = ${sinValue}`);
+        setInput(sinValue.toString());
+      }
+    } else if (value === "cos") {
+      if (input) {
+        const radianValue = parseFloat(input) * (Math.PI / 180);
+        const cosValue = Math.cos(radianValue);
+        setLastCalculation(`cos(${input}) = ${cosValue}`);
+        setInput(cosValue.toString());
+      }
+    } else if (value === "tan") {
+      if (input) {
+        const radianValue = parseFloat(input) * (Math.PI / 180); // Umrechnung in Radiant
+        const tanValue = Math.tan(radianValue);
+        setLastCalculation(`tan(${input}) = ${tanValue}`);
+        setInput(tanValue.toString());
+      }
     } else {
       setInput(input + value);
     }
