@@ -28,6 +28,7 @@ export default function Buttons({ onButtonClick }) {
                       "x²",
                       "x³",
                       "x^x",
+                      "√x",
                       "ⁿ√x",
                       "sin",
                       "cos",
