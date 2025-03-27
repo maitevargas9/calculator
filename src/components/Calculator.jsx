@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Display from "./Display";
-import Button from "./Button";
+import Buttons from "./Buttons";
 
 export default function Calculator() {
   const [input, setInput] = useState("");
@@ -32,7 +32,7 @@ export default function Calculator() {
         input={input}
         lastCalculation={lastCalculation}
       />
-      <Button onButtonClick={handleButtonClick} />
+      <Buttons onButtonClick={handleButtonClick} />
     </div>
   );
 }
