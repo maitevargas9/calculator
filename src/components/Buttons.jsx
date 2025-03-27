@@ -26,7 +26,6 @@ export default function Buttons({ onButtonClick }) {
                   : [
                       "π",
                       "x²",
-                      "x³",
                       "x^x",
                       "√x",
                       "ⁿ√x",
